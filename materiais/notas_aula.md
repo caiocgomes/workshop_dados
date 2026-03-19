@@ -303,9 +303,9 @@ Fechar o notebook. Encerrar o dia.
 
 # DIA 2: Análise e Comunicação
 
-## Abertura Dia 2 (10 min)
+## Abertura Dia 2 (20 min)
 
-### Recap do Dia 1
+### Recap do Dia 1 (5 min)
 
 "Ontem vocês fizeram o trabalho que ninguém vê mas que sustenta toda análise: diagnóstico, limpeza, exploração. Vamos relembrar rapidamente."
 
@@ -316,9 +316,62 @@ Pontos para recap (consultar enquanto fala):
 - Decisões de limpeza documentadas (manter NaN, criar flag de alto valor, padronizar categorias)
 - Observações da exploração: distribuição bimodal de notas, concentração de receita em poucas categorias, correlação preço-frete com dispersão
 
+Sobre o cliffhanger: "Ficou uma pergunta no ar ontem sobre se correlação prova causalidade. Vamos voltar nela quando analisarmos atraso vs nota."
+
 ### Carregamento dos dados no Dia 2
 
 No Colab, o notebook pede upload dos CSVs limpos que baixaram ontem. Se alguém perdeu os arquivos, há fallback automático para versões pré-limpas hospedadas. Explicar: "Se vocês baixaram os arquivos ontem, façam upload. Se não, o notebook carrega uma versão pronta. O resultado é o mesmo, mas quem usa os próprios dados limpos carrega também as decisões que tomou ontem."
+
+### Reveal de Margem de Erro (10 min)
+
+Transição do recap para a demo:
+
+"Antes de começarmos a responder as perguntas, eu quero mostrar algo sobre os dados que vocês limparam ontem. Algo que muda como vocês vão olhar para cada número que produzirem hoje."
+
+Abrir o notebook de solução (projetado na tela). Fazer o groupby rápido de satisfação por categoria. Mostrar o ranking ordenado.
+
+"Olhem esse ranking. Parece claro: office_furniture é a pior, books_general_interest é a melhor."
+
+**Votação:** "Levantem a mão quem acha que audio é significativamente pior que a média geral."
+
+Esperar. Maioria levanta.
+
+Executar a célula de IC. O mesmo gráfico aparece com barras de erro (bigodes).
+
+Silêncio de 3-4 segundos. Deixar a sala processar.
+
+"Olhem os bigodes. O bigode é a margem de erro. Vocês já viram margem de erro em pesquisa de eleição? '48% dos votos, com margem de 2 pontos.' Aqui é a mesma ideia."
+
+Apontar para categorias com bigodes grandes:
+
+"fashion_underwear_beach: média 3.93, mas com 120 avaliações o bigode vai de 3.7 a 4.2. Pode ser uma das piores ou uma das melhores. A gente não sabe."
+
+Apontar para categorias com bigodes pequenos:
+
+"health_beauty: média 4.17, com 7 mil avaliações o bigode é minúsculo. Essa nota a gente confia."
+
+"Quando os bigodes se cruzam, a diferença pode ser ruído. Quando não se cruzam, aí vocês têm algo real."
+
+Pausa. Frase de âncora:
+
+**"Média sem margem de erro é opinião, não é evidência. O bigode é o que separa 'eu acho' de 'os dados mostram'."**
+
+Generalização rápida (só se houver tempo):
+
+"Isso chama intervalo de confiança. Quanto mais dados, menor a margem. Quanto menos dados, maior a incerteza. O filtro de 100 que a gente usa é uma regra prática. O certo seria mostrar a margem de erro e deixar o leitor ver onde tem certeza e onde não tem."
+
+Reframe para o exercício:
+
+"Pra agora, vamos com o filtro de 100. É suficiente pro briefing da Marina. Mas guardem esse gráfico na cabeça. Tudo que fizerem hoje, perguntem: qual o n?"
+
+### Erros a evitar na demo de margem de erro
+
+- **Não chamar de "intervalo de confiança" logo de cara.** Usar "margem de erro" (que o público conhece de pesquisa eleitoral). Só no final dar o nome técnico.
+- **Não mostrar fórmulas.** O ponto é visual e intuitivo, não matemático.
+- **Se alguém perguntar "como calcula?":** "São 3 linhas de código com numpy. Mando por email depois." Satisfaz sem abrir tangente.
+- **Se passar de 10 minutos:** Cortar a generalização. Ir direto para "guardem isso, qual o n?" e seguir para o Bloco 1.
+- **Se alguém pedir IC no notebook dele:** "Ótimo instinto. Pro briefing da Marina o filtro de volume mínimo resolve. O código eu mando por email."
+- **Reforço informal ao circular durante o exercício:** Se alguém rankear categorias sem mencionar volume, perguntar: "Cadê o bigode?"
 
 ### Recontextualização das perguntas
 
@@ -326,7 +379,7 @@ No Colab, o notebook pede upload dos CSVs limpos que baixaram ontem. Se alguém 
 
 ### Objetivo do dia
 
-"Hoje o ciclo completa. Vocês vão: (1) responder as perguntas com análise estatística, (2) criar visualizações que comuniquem as descobertas, e (3) montar o documento de análise. No final do dia, o que vocês têm em mãos é um projeto real de portfólio."
+"Hoje o ciclo completa, mas antes, uma revelação sobre o que significa confiar num número. Vocês vão: (1) responder as perguntas com análise estatística, (2) criar visualizações que comuniquem as descobertas, e (3) montar o documento de análise. No final do dia, o que vocês têm em mãos é um projeto real de portfólio."
 
 ---
 
@@ -486,7 +539,7 @@ Limitações que os participantes devem documentar:
 
 ---
 
-## Bloco 4: Documento Final e Encerramento (30 min)
+## Bloco 4: Documento Final e Encerramento (20 min)
 
 ### Exportação
 
@@ -523,7 +576,7 @@ Depois, seguir o script de CTA em `materiais/script_cta.md`. A transição natur
 ## Transições do Dia 2
 
 **Abertura → Bloco 1 (Análise Estatística):**
-"Ontem vocês formularam as perguntas. Hoje vocês respondem. Vamos começar com a primeira pergunta da Marina: satisfação por categoria."
+"Vocês viram o que a margem de erro faz com um ranking. Guardem isso. Agora vamos responder as perguntas da Marina, começando por satisfação por categoria."
 
 **Bloco 1 → Bloco 2 (Visualizações):**
 "Vocês têm os números. Agora precisam comunicar esses números de forma que a Marina consiga apresentar para a diretoria sem precisar de vocês do lado explicando. Isso é o que as visualizações finais fazem."

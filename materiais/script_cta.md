@@ -19,6 +19,8 @@ Este script acontece DEPOIS de o checkpoint final confirmar que os participantes
 
 "Se a Marina chegasse e perguntasse: 'Se eu reduzir o prazo de entrega em 2 dias, quanto a nota sobe?' Vocês conseguiriam responder com o que fizeram hoje?"
 
+"E quando vocês mostram o ranking de categorias, como sabem que a diferença entre a terceira e a quarta pior não é ruído? Lembram do gráfico com os bigodes? A margem de erro que vimos hoje é só o começo."
+
 Pausa.
 
 "Não. E tudo bem. Porque para responder isso vocês precisariam de inferência causal, de modelagem, de experimentação. E isso é o próximo degrau."

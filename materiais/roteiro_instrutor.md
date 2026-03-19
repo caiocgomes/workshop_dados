@@ -108,12 +108,30 @@
 
 ## Dia 2: Análise e Comunicação (~4h)
 
-### Abertura Dia 2 (10 min) | 09:00-09:10
+### Abertura Dia 2 + Demo Margem de Erro (20 min) | 09:00-09:20
+
+**Recap (5 min):**
 - Recap rápido do Dia 1
+- Sobre o cliffhanger: "Ficou uma pergunta no ar ontem sobre correlação e causalidade. Vamos voltar nela quando analisarmos atraso vs nota."
 - **Carregar dados limpos:** no Colab, o notebook pede upload dos CSVs que baixaram ontem. Se alguém perdeu, há fallback automático para versões pré-limpas.
+
+**Demo de IC (10 min):**
+- Abrir notebook de solução projetado na tela
+- Fazer groupby rápido: ranking de satisfação por categoria (só médias)
+- "Parece claro, certo? office_furniture é a pior, books_general_interest é a melhor."
+- **Votação:** "Levantem a mão quem acha que audio é significativamente pior que a média geral."
+- Executar célula de IC: barras de erro aparecem. Ranking colapsa.
+- Silêncio 3-4 segundos.
+- "Vocês votaram num ranking que não existe."
+- Analogia: margem de erro como pesquisa eleitoral
+- Frase-âncora: **"Média sem margem de erro é opinião, não é evidência."**
+
+**Reframe (5 min):**
+- "Pra agora, vamos com o filtro de 100. Suficiente pro briefing da Marina."
+- "Mas guardem esse gráfico. Tudo que fizerem hoje: qual o n?"
 - Objetivo do dia: "Hoje vocês respondem as perguntas e montam o relatório"
 
-### Bloco 1: Análise Estatística Aplicada (60 min) | 09:10-10:10
+### Bloco 1: Análise Estatística Aplicada (60 min) | 09:20-10:20
 
 **Demonstração ao vivo (15 min):**
 - Mostrar como responder uma pergunta com groupby + agg
@@ -128,9 +146,9 @@
 **[TANGENCIAMENTO 4]** Na análise de correlação atraso vs. nota:
 > "A correlação aqui é -0.3, que é moderada. Mas cuidado: correlação não é causalidade. Pode ser que regiões distantes tenham mais atraso E mais insatisfação por outros motivos. Para separar o efeito do atraso dos confundidores geográficos, precisaríamos de regressão controlada ou matching. É o tipo de pergunta que a gente ataca no módulo de inferência causal."
 
-### Intervalo (10 min) | 10:10-10:20
+### Intervalo (10 min) | 10:20-10:30
 
-### Bloco 2: Visualizações Interpretativas (60 min) | 10:20-11:20
+### Bloco 2: Visualizações Interpretativas (60 min) | 10:30-11:30
 
 **Demonstração ao vivo (10 min):**
 - Criar uma visualização final ao vivo com título, labels e anotação
@@ -142,9 +160,9 @@
 
 **Checkpoint (5 min)**
 
-### Intervalo (10 min) | 11:20-11:30
+### Intervalo (10 min) | 11:30-11:40
 
-### Bloco 3: Storytelling com Dados (45 min) | 11:30-12:15
+### Bloco 3: Storytelling com Dados (45 min) | 11:40-12:25
 
 **Demonstração ao vivo (10 min):**
 - Mostrar a estrutura contexto > problema > descoberta > recomendação
@@ -154,14 +172,14 @@
 **Exercício dos participantes (35 min):**
 - Preencher o documento de análise no notebook
 
-### Bloco 4: Documento Final (30 min) | 12:15-12:45
+### Bloco 4: Documento Final (20 min) | 12:25-12:45
 
-**Exercício (20 min):**
+**Exercício (15 min):**
 - Exportar notebook como HTML
 - Revisar qualidade do documento final
 - Checkpoint final
 
-**Fechamento (10 min):**
+**Fechamento (5 min):**
 - Mostrar os documentos de 2-3 participantes
 - Destacar o que ficou bom
 
